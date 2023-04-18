@@ -1,0 +1,17 @@
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/bin/iPhoneSimulator/Debug/MvvmExampleiOS.exe
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/bin/iPhoneSimulator/Debug/MvvmExampleiOS.pdb
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/actool/_ProcessedImageAssetsPath.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/ibtool/_ProcessedInterfaceDefinitionsPath.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/coremlc/_PartialAppManifest.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/coremlc/_BundleResourceWithLogicalName.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/coremlc/_ProcessedCoreMLModelsPath.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/_ProcessedBundleResourcesPath.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/_ProcessedContentPath.items
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/optimized/
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/MvvmExampleiOS.csproj.AssemblyReference.cache
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/MvvmExampleiOS.csproj.CoreCompileInputs.cache
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/MvvmExampleiOS.exe
+/Users/yvaleriano/Projects/MvvmExample/MvvmExampleiOS/obj/iPhoneSimulator/Debug/MvvmExampleiOS.pdb
