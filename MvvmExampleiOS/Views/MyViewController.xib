@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController">
+            <connections>
+                <outlet property="GenerositySlider" destination="EDE-h1-C5x" id="FMk-gM-c4Z"/>
+                <outlet property="SubTotalTextField" destination="MPR-el-gxw" id="n3N-ez-9yz"/>
+                <outlet property="TipLabel" destination="Iwz-XK-Np4" id="gzY-dO-OtG"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGF-mj-9nA">
+                    <rect key="frame" x="15" y="74" width="363" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generosity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gne-JR-KPl">
+                    <rect key="frame" x="15" y="154" width="363" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MPR-el-gxw">
+                    <rect key="frame" x="15" y="105" width="363" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="EDE-h1-C5x">
+                    <rect key="frame" x="13" y="185" width="367" height="31"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwz-XK-Np4">
+                    <rect key="frame" x="15" y="261" width="363" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip To Leave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm0-Kl-Yad">
+                    <rect key="frame" x="15" y="230" width="363" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MPR-el-gxw" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="15" id="3mt-ZH-Rov"/>
+                <constraint firstItem="Zm0-Kl-Yad" firstAttribute="top" secondItem="EDE-h1-C5x" secondAttribute="bottom" constant="15" id="5JY-Ws-Z3U"/>
+                <constraint firstItem="Iwz-XK-Np4" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="15" id="5e4-w7-tJn"/>
+                <constraint firstItem="MPR-el-gxw" firstAttribute="top" secondItem="nGF-mj-9nA" secondAttribute="bottom" constant="10" id="6Tq-wb-iqE"/>
+                <constraint firstAttribute="trailing" secondItem="gne-JR-KPl" secondAttribute="trailing" constant="15" id="7dn-Lb-nNn"/>
+                <constraint firstItem="Iwz-XK-Np4" firstAttribute="top" secondItem="Zm0-Kl-Yad" secondAttribute="bottom" constant="10" id="B19-Jy-AJg"/>
+                <constraint firstItem="EDE-h1-C5x" firstAttribute="top" secondItem="gne-JR-KPl" secondAttribute="bottom" constant="10" id="BMJ-Uu-I1l"/>
+                <constraint firstItem="Zm0-Kl-Yad" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="15" id="HvR-uA-WRg"/>
+                <constraint firstAttribute="trailing" secondItem="Iwz-XK-Np4" secondAttribute="trailing" constant="15" id="KNd-iw-aul"/>
+                <constraint firstAttribute="trailing" secondItem="Zm0-Kl-Yad" secondAttribute="trailing" constant="15" id="SIu-eE-aG2"/>
+                <constraint firstAttribute="trailing" secondItem="EDE-h1-C5x" secondAttribute="trailing" constant="15" id="SUe-yW-iYX"/>
+                <constraint firstItem="EDE-h1-C5x" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="15" id="TEx-p2-RAh"/>
+                <constraint firstAttribute="trailing" secondItem="nGF-mj-9nA" secondAttribute="trailing" constant="15" id="W45-NT-aAV"/>
+                <constraint firstItem="gne-JR-KPl" firstAttribute="top" secondItem="MPR-el-gxw" secondAttribute="bottom" constant="15" id="hbh-yZ-HYH"/>
+                <constraint firstItem="gne-JR-KPl" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="15" id="mZj-bb-If7"/>
+                <constraint firstItem="nGF-mj-9nA" firstAttribute="top" secondItem="2" secondAttribute="topMargin" constant="15" id="sOa-Y0-ETM"/>
+                <constraint firstItem="nGF-mj-9nA" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="15" id="zKb-hu-cwu"/>
+                <constraint firstAttribute="trailing" secondItem="MPR-el-gxw" secondAttribute="trailing" constant="15" id="zxH-mw-80Z"/>
+            </constraints>
+            <point key="canvasLocation" x="-54" y="-53"/>
+        </view>
+    </objects>
+</document>
