@@ -117,10 +117,12 @@
     <ItemGroup>
         <Folder Include="Resources\" />
         <Folder Include="Views\" />
+        <Folder Include="Views\Cells\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
         <InterfaceDefinition Include="Main.storyboard" />
+        <InterfaceDefinition Include="Views\Cells\MyTableViewCell.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -132,6 +134,14 @@
         <Compile Include="Views\MyViewController.cs" />
         <Compile Include="Views\MyViewController.designer.cs">
           <DependentUpon>MyViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\ListExampleViewController.cs" />
+        <Compile Include="Views\ListExampleViewController.designer.cs">
+          <DependentUpon>ListExampleViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Views\Cells\MyTableViewCell.cs" />
+        <Compile Include="Views\Cells\MyTableViewCell.designer.cs">
+          <DependentUpon>MyTableViewCell.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>

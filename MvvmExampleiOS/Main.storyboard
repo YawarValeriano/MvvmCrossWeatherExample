@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-570" y="-46"/>
         </scene>
-        <!--New BV-->
+        <!--Tip View-->
         <scene sceneID="hEm-hh-ljn">
             <objects>
                 <viewController storyboardIdentifier="MyViewController" id="h4y-sw-mIX" customClass="MyViewController" sceneMemberID="viewController">
@@ -75,6 +75,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-oc-Xii">
+                                <rect key="frame" x="36" y="489" width="321" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go to List"/>
+                                <connections>
+                                    <segue destination="Idg-TS-MNV" kind="show" id="Wqr-iK-HhR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -87,6 +95,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ZZC-l0-vGf" secondAttribute="trailing" id="JSy-Rv-YcU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M72-RV-5fL" secondAttribute="trailing" constant="20" id="NJM-JQ-4zJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Drn-dS-rFE" secondAttribute="trailing" constant="20" id="OEY-FD-yl6"/>
+                            <constraint firstItem="Tza-oc-Xii" firstAttribute="leading" secondItem="Sz4-jB-Ale" secondAttribute="leadingMargin" constant="20" id="Qwk-He-n8V"/>
                             <constraint firstItem="M72-RV-5fL" firstAttribute="leading" secondItem="Sz4-jB-Ale" secondAttribute="leadingMargin" constant="20" id="RjH-Zv-Ch4"/>
                             <constraint firstItem="ZZC-l0-vGf" firstAttribute="leading" secondItem="Sz4-jB-Ale" secondAttribute="leadingMargin" id="SSQ-FX-40W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NS6-gl-Unh" secondAttribute="trailing" constant="20" id="TJr-xt-0dR"/>
@@ -95,13 +104,15 @@
                             <constraint firstItem="QTr-fK-Dmj" firstAttribute="top" secondItem="NS6-gl-Unh" secondAttribute="bottom" constant="8" id="eh6-KU-jpf"/>
                             <constraint firstItem="2R8-l2-fav" firstAttribute="top" secondItem="Drn-dS-rFE" secondAttribute="bottom" constant="5" id="g4n-aq-jH4"/>
                             <constraint firstItem="44T-uL-Tte" firstAttribute="top" secondItem="ZZC-l0-vGf" secondAttribute="bottom" constant="20" id="iJR-hR-IeT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tza-oc-Xii" secondAttribute="trailing" constant="20" id="iqo-Ce-c98"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2R8-l2-fav" secondAttribute="trailing" constant="20" id="jvj-DI-kuW"/>
                             <constraint firstItem="NS6-gl-Unh" firstAttribute="top" secondItem="qvO-uv-EQO" secondAttribute="bottom" constant="15" id="jxg-Ql-wpj"/>
                             <constraint firstItem="2R8-l2-fav" firstAttribute="leading" secondItem="Sz4-jB-Ale" secondAttribute="leadingMargin" constant="20" id="oLV-Vq-lrj"/>
                             <constraint firstItem="ZZC-l0-vGf" firstAttribute="top" secondItem="2R8-l2-fav" secondAttribute="bottom" constant="5" id="vA9-iH-UiJ"/>
+                            <constraint firstItem="Tza-oc-Xii" firstAttribute="top" secondItem="M72-RV-5fL" secondAttribute="bottom" constant="150" id="zyU-xc-jeE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New BV" id="XFr-8b-Qwy"/>
+                    <navigationItem key="navigationItem" title="Tip View" id="XFr-8b-Qwy"/>
                     <connections>
                         <outlet property="GenerositySlider" destination="2R8-l2-fav" id="nMa-s9-fPp"/>
                         <outlet property="SubTotalTextField" destination="QTr-fK-Dmj" id="mom-TF-eXv"/>
@@ -111,6 +122,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lvg-OA-41b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="329" y="-35"/>
+        </scene>
+        <!--List View-->
+        <scene sceneID="0fv-Q2-0xe">
+            <objects>
+                <viewController storyboardIdentifier="ListExampleViewController" id="Idg-TS-MNV" customClass="ListExampleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3qa-F1-1IU"/>
+                        <viewControllerLayoutGuide type="bottom" id="OiO-b7-2QP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y9C-kW-IVE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gqX-4l-D4N">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gqX-4l-D4N" firstAttribute="top" secondItem="3qa-F1-1IU" secondAttribute="bottom" id="GkT-iX-Bf9"/>
+                            <constraint firstItem="OiO-b7-2QP" firstAttribute="top" secondItem="gqX-4l-D4N" secondAttribute="bottom" id="Gzi-G6-03i"/>
+                            <constraint firstAttribute="trailing" secondItem="gqX-4l-D4N" secondAttribute="trailing" id="KWG-VR-T2v"/>
+                            <constraint firstItem="gqX-4l-D4N" firstAttribute="leading" secondItem="y9C-kW-IVE" secondAttribute="leading" id="ibC-py-mxJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="List View" id="IbG-vx-cqH"/>
+                    <connections>
+                        <outlet property="dataTableView" destination="gqX-4l-D4N" id="I0t-oa-QhA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOJ-vI-iuV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="-40"/>
         </scene>
     </scenes>
     <resources>
