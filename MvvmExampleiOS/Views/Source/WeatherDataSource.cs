@@ -11,7 +11,7 @@ namespace MvvmExampleiOS.Views.Source
 		public WeatherDataSource(UITableView tableView) : base(tableView)
 		{
             // Register cell for reuse
-            TableView.RegisterClassForCellReuse(typeof(WeatherTableViewCell), WeatherTableViewCell.Key);
+            tableView.RegisterNibForCellReuse(WeatherTableViewCell.Nib, WeatherTableViewCell.Key);
 
         }
 

@@ -20,14 +20,22 @@ namespace MvvmExampleiOS.Views.Cells
 		protected WeatherTableViewCell (IntPtr handle) : base (handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
-			this.Layer.BackgroundColor = UIColor.Blue.CGColor;
-			this.Layer.CornerRadius = 8;
+
+			//BackgroundView.Layer.CornerRadius = 8;
+			//ContentView.Layer.CornerRadius = 8;
+   //         ContentView.BackgroundColor = UIColor.Blue;
+
             this.DelayBind(() =>
             {
-                var set = this.CreateBindingSet<WeatherTableViewCell, ListResult>();
-                set.Bind(cityNameLabel).For(v => v.Text).To(m => m.Name);
+				var set = this.CreateBindingSet<WeatherTableViewCell, ListResult>();
+				set.Bind(cityNameLabel).To(m => m.Name);
+				set.Bind(CountryLabel).To(m => m.Sys.Country);
+				set.Bind(WeatherLabel).To(m => m.Weather[0].Main);
+				set.Bind(TemperatureLabel).To(m => m.Main.Temp);
+				set.Bind(MinTempLabel).To(m => m.Main.TempMin);
+				set.Bind(MaxTempLabel).To(m => m.Main.TempMax);
                 set.Apply();
             });
-        }
+        } 
 	}
 }

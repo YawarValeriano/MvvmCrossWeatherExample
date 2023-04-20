@@ -19,7 +19,7 @@ namespace Core.Models
         public ListResult[] ListResults { get; set; }
     }
 
-    public class ListResult
+    public partial class ListResult
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
