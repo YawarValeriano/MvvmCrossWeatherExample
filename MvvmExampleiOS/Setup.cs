@@ -1,0 +1,30 @@
+﻿using System;
+using Core.DI;
+using MvvmCross;
+using MvvmCross.Binding.Bindings.Target.Construction;
+using MvvmCross.IoC;
+using MvvmCross.Platforms.Ios.Core;
+using UIKit;
+
+namespace MvvmExampleiOS
+{
+	public class Setup : MvxIosSetup<App>
+    {
+        protected override void InitializeLastChance()
+        {
+            base.InitializeLastChance();
+
+            var registry = Mvx.IoCProvider.Resolve<IMvxTargetBindingFactoryRegistry>();
+            registry.RegisterFactory(new MvxCustomBindingFactory<UIViewController>("NetworkIndicator", (viewController) => new NetworkIndicatorTargetBinding(viewController)));
+        }
+
+        protected override IMvxIocOptions CreateIocOptions()
+        {
+            return new MvxIocOptions
+            {
+                PropertyInjectorOptions = MvxPropertyInjectorOptions.MvxInject
+            };
+        }
+    }
+}
+

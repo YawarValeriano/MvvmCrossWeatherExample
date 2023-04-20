@@ -118,11 +118,13 @@
         <Folder Include="Resources\" />
         <Folder Include="Views\" />
         <Folder Include="Views\Cells\" />
+        <Folder Include="Views\Source\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
         <InterfaceDefinition Include="Main.storyboard" />
         <InterfaceDefinition Include="Views\Cells\MyTableViewCell.xib" />
+        <InterfaceDefinition Include="Views\Cells\WeatherTableViewCell.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -143,6 +145,14 @@
         <Compile Include="Views\Cells\MyTableViewCell.designer.cs">
           <DependentUpon>MyTableViewCell.cs</DependentUpon>
         </Compile>
+        <Compile Include="Views\Source\WeatherDataSource.cs" />
+        <Compile Include="Views\Cells\WeatherTableViewCell.cs" />
+        <Compile Include="Views\Cells\WeatherTableViewCell.designer.cs">
+          <DependentUpon>WeatherTableViewCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="LinkerPleaseInclude.cs" />
+        <Compile Include="Setup.cs" />
+        <Compile Include="NetworkIndicatorTargetBinding.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Core\Core.csproj">

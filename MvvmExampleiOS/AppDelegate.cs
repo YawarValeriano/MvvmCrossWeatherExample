@@ -10,7 +10,7 @@ namespace MvvmExampleiOS
 
     //[Register(nameof(AppDelegate))]
     [Register ("AppDelegate")]
-    public class AppDelegate : MvxApplicationDelegate<MvxIosSetup<App>, App>
+    public class AppDelegate : MvxApplicationDelegate<Setup, App>
     //public class AppDelegate : UIResponder, IUIApplicationDelegate {
     {
         public override UIWindow Window { get; set; }

@@ -7,6 +7,7 @@ using MvvmCross.Binding.BindingContext;
 using MvvmCross.Platforms.Ios.Binding.Views;
 using MvvmCross.Platforms.Ios.Views;
 using MvvmExampleiOS.Views.Cells;
+using MvvmExampleiOS.Views.Source;
 using UIKit;
 
 namespace MvvmExampleiOS.Views
@@ -14,22 +15,37 @@ namespace MvvmExampleiOS.Views
     [MvxFromStoryboard("Main")]
     public partial class ListExampleViewController : MvxViewController<ListViewModel>
     {
-		public ListExampleViewController (IntPtr handle) : base (handle)
+
+        private WeatherDataSource _dataSource;
+        private MvxUIRefreshControl _refreshControl;
+
+        public ListExampleViewController (IntPtr handle) : base (handle)
 		{
 		}
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            var source = new MvxSimpleTableViewSource(dataTableView, "MyTableViewCell", MyTableViewCell.Key);
-            dataTableView.RowHeight = 130;
+            //var source = new MvxSimpleTableViewSource(dataTableView, "MyTableViewCell", MyTableViewCell.Key);
+            //dataTableView.RowHeight = 130;
+
+            _refreshControl = new MvxUIRefreshControl();
+            dataTableView.AddSubview(_refreshControl);
+
+            _dataSource = new WeatherDataSource(dataTableView);
+            dataTableView.Source = _dataSource;
 
             var set = this.CreateBindingSet<ListExampleViewController, ListViewModel>();
-            set.Bind(source).For(v => v.ItemsSource).To(vm => vm.People);
+
+            set.Bind(_refreshControl).For(r => r.IsRefreshing).To(vm => vm.LoadWeatherResultTask.IsNotCompleted).WithFallback(false);
+
+            set.Bind(SearchField).To(vm => vm.SearchTerm);
+            set.Bind(SearchButton).To(vm => vm.FetchResultsCommand);
+            set.Bind(SearchButton).For(v => v.Enabled).To(vm => vm.EnabledSearchButton);
+
+            set.Bind(_dataSource).For(v => v.ItemsSource).To(vm => vm.WeatherResults);
             set.Apply();
 
-            dataTableView.Source = source;
-            dataTableView.ReloadData();
         }
     }
 }

@@ -14,12 +14,28 @@ namespace MvvmExampleiOS.Views
 	{
 		[Outlet]
 		UIKit.UITableView dataTableView { get; set; }
+
+		[Outlet]
+		UIKit.UIButton SearchButton { get; set; }
+
+		[Outlet]
+		UIKit.UITextField SearchField { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (dataTableView != null) {
 				dataTableView.Dispose ();
 				dataTableView = null;
+			}
+
+			if (SearchButton != null) {
+				SearchButton.Dispose ();
+				SearchButton = null;
+			}
+
+			if (SearchField != null) {
+				SearchField.Dispose ();
+				SearchField = null;
 			}
 		}
 	}

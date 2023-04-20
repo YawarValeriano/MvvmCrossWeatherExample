@@ -136,26 +136,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gqX-4l-D4N">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="148" width="393" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert location to search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3d4-q1-2fG">
+                                <rect key="frame" x="16" y="108" width="299.66666666666669" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Inc-ou-ITy">
+                                <rect key="frame" x="315.66666666666669" y="108" width="77.333333333333314" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Search"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gqX-4l-D4N" firstAttribute="top" secondItem="3qa-F1-1IU" secondAttribute="bottom" id="GkT-iX-Bf9"/>
-                            <constraint firstItem="OiO-b7-2QP" firstAttribute="top" secondItem="gqX-4l-D4N" secondAttribute="bottom" id="Gzi-G6-03i"/>
-                            <constraint firstAttribute="trailing" secondItem="gqX-4l-D4N" secondAttribute="trailing" id="KWG-VR-T2v"/>
-                            <constraint firstItem="gqX-4l-D4N" firstAttribute="leading" secondItem="y9C-kW-IVE" secondAttribute="leading" id="ibC-py-mxJ"/>
+                            <constraint firstItem="3d4-q1-2fG" firstAttribute="leading" secondItem="y9C-kW-IVE" secondAttribute="leadingMargin" id="2mw-ov-Hot"/>
+                            <constraint firstItem="OiO-b7-2QP" firstAttribute="top" secondItem="gqX-4l-D4N" secondAttribute="bottom" id="5ds-zi-8rZ"/>
+                            <constraint firstAttribute="trailing" secondItem="gqX-4l-D4N" secondAttribute="trailing" id="FVJ-jT-ITw"/>
+                            <constraint firstItem="Inc-ou-ITy" firstAttribute="leading" secondItem="3d4-q1-2fG" secondAttribute="trailing" id="JDn-vB-0wh"/>
+                            <constraint firstItem="gqX-4l-D4N" firstAttribute="top" secondItem="Inc-ou-ITy" secondAttribute="bottom" constant="5" id="N7T-vL-VOf"/>
+                            <constraint firstItem="3d4-q1-2fG" firstAttribute="top" secondItem="3qa-F1-1IU" secondAttribute="bottom" constant="5" id="RPt-e6-jdI"/>
+                            <constraint firstItem="Inc-ou-ITy" firstAttribute="top" secondItem="3qa-F1-1IU" secondAttribute="bottom" constant="5" id="gxx-c8-WvG"/>
+                            <constraint firstItem="gqX-4l-D4N" firstAttribute="leading" secondItem="y9C-kW-IVE" secondAttribute="leading" id="t4d-K0-MVh"/>
+                            <constraint firstAttribute="trailing" secondItem="Inc-ou-ITy" secondAttribute="trailing" id="uYt-hg-Nh0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List View" id="IbG-vx-cqH"/>
                     <connections>
+                        <outlet property="SearchButton" destination="Inc-ou-ITy" id="LTG-g5-a8O"/>
+                        <outlet property="SearchField" destination="3d4-q1-2fG" id="bNj-e3-HgB"/>
                         <outlet property="dataTableView" destination="gqX-4l-D4N" id="I0t-oa-QhA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOJ-vI-iuV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-40"/>
+            <point key="canvasLocation" x="1203.8167938931297" y="-40.140845070422536"/>
         </scene>
     </scenes>
     <resources>
