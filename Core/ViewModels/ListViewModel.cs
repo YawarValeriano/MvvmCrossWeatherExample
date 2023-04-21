@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Core.Models;
 using Core.Repositories;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
 namespace Core.ViewModels
@@ -11,10 +12,12 @@ namespace Core.ViewModels
 	public class ListViewModel : MvxViewModel
 	{
 		private readonly IWeatherRepository _repository;
+        private readonly IMvxNavigationService _navigationService;
 
-		public ListViewModel(IWeatherRepository repository)
+		public ListViewModel(IWeatherRepository repository, IMvxNavigationService navigationService)
 		{
             _repository = repository;
+            _navigationService = navigationService;
 
             WeatherResults = new MvxObservableCollection<ListResult>();
 
@@ -24,6 +27,8 @@ namespace Core.ViewModels
                 LoadWeatherResultTask = MvxNotifyTask.Create(FetchLocationWeather());
                 RaisePropertyChanged(() => LoadWeatherResultTask);
             });
+
+            ResultSelectedCommand = new MvxAsyncCommand<ListResult>(ShowWeatherResultAsync);
         }
 
 
@@ -70,6 +75,7 @@ namespace Core.ViewModels
 
         // Commands
         public IMvxCommand FetchResultsCommand { get; private set; }
+        public IMvxCommand<ListResult> ResultSelectedCommand { get; private set; }
 
 
         // Methods
@@ -77,6 +83,12 @@ namespace Core.ViewModels
         {
             var result = await _repository.FindWeatherResultsByName(_searchTerm);
             WeatherResults.AddRange(result.ListResults);
+        }
+
+        private async Task ShowWeatherResultAsync(ListResult selectedresult)
+        {
+            //Console.WriteLine("Send to nextView");
+            await _navigationService.Navigate<DetailViewModel, ListResult>(selectedresult);
         }
     }
 }

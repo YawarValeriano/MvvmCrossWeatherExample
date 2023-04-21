@@ -65,6 +65,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="ViewActivity.cs" />
     <Compile Include="ListExampleActivity.cs" />
+    <Compile Include="DetailActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -109,6 +110,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\rounded_background.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\activity_detail.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

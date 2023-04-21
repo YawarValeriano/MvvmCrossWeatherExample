@@ -44,6 +44,8 @@ namespace MvvmExampleiOS.Views
             set.Bind(SearchButton).For(v => v.Enabled).To(vm => vm.EnabledSearchButton);
 
             set.Bind(_dataSource).For(v => v.ItemsSource).To(vm => vm.WeatherResults);
+            set.Bind(_dataSource).For(v => v.SelectionChangedCommand).To(vm => vm.ResultSelectedCommand);
+
             set.Apply();
 
         }

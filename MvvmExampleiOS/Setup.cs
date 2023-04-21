@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Reflection;
+using Core.Converters;
 using Core.DI;
+using Core.ViewModels;
 using MvvmCross;
 using MvvmCross.Binding.Bindings.Target.Construction;
 using MvvmCross.IoC;
@@ -13,9 +18,6 @@ namespace MvvmExampleiOS
         protected override void InitializeLastChance()
         {
             base.InitializeLastChance();
-
-            var registry = Mvx.IoCProvider.Resolve<IMvxTargetBindingFactoryRegistry>();
-            registry.RegisterFactory(new MvxCustomBindingFactory<UIViewController>("NetworkIndicator", (viewController) => new NetworkIndicatorTargetBinding(viewController)));
         }
 
         protected override IMvxIocOptions CreateIocOptions()
