@@ -30,7 +30,8 @@ namespace Core.Services
             try
             {
                 string url = $"{baseURL}find?q={endpoint}{appID}";
-                response = await client.GetAsync(url);
+                var formattedURL = Uri.EscapeUriString(url);
+                response = await client.GetAsync(formattedURL);
                 return await response.Content.ReadFromJsonAsync<T>();
             }
             catch (Exception ex)
