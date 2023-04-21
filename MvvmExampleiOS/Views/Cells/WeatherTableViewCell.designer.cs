@@ -13,9 +13,6 @@ namespace MvvmExampleiOS.Views.Cells
 	partial class WeatherTableViewCell
 	{
 		[Outlet]
-		UIKit.UIView BackgroundView { get; set; }
-
-		[Outlet]
 		UIKit.UILabel cityNameLabel { get; set; }
 
 		[Outlet]
@@ -28,6 +25,9 @@ namespace MvvmExampleiOS.Views.Cells
 		UIKit.UILabel MinTempLabel { get; set; }
 
 		[Outlet]
+		UIKit.UIView StackBackground { get; set; }
+
+		[Outlet]
 		UIKit.UILabel TemperatureLabel { get; set; }
 
 		[Outlet]
@@ -35,11 +35,6 @@ namespace MvvmExampleiOS.Views.Cells
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (BackgroundView != null) {
-				BackgroundView.Dispose ();
-				BackgroundView = null;
-			}
-
 			if (cityNameLabel != null) {
 				cityNameLabel.Dispose ();
 				cityNameLabel = null;
@@ -50,14 +45,9 @@ namespace MvvmExampleiOS.Views.Cells
 				CountryLabel = null;
 			}
 
-			if (WeatherLabel != null) {
-				WeatherLabel.Dispose ();
-				WeatherLabel = null;
-			}
-
-			if (TemperatureLabel != null) {
-				TemperatureLabel.Dispose ();
-				TemperatureLabel = null;
+			if (MaxTempLabel != null) {
+				MaxTempLabel.Dispose ();
+				MaxTempLabel = null;
 			}
 
 			if (MinTempLabel != null) {
@@ -65,9 +55,19 @@ namespace MvvmExampleiOS.Views.Cells
 				MinTempLabel = null;
 			}
 
-			if (MaxTempLabel != null) {
-				MaxTempLabel.Dispose ();
-				MaxTempLabel = null;
+			if (TemperatureLabel != null) {
+				TemperatureLabel.Dispose ();
+				TemperatureLabel = null;
+			}
+
+			if (WeatherLabel != null) {
+				WeatherLabel.Dispose ();
+				WeatherLabel = null;
+			}
+
+			if (StackBackground != null) {
+				StackBackground.Dispose ();
+				StackBackground = null;
 			}
 		}
 	}

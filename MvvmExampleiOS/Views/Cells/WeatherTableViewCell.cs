@@ -21,12 +21,9 @@ namespace MvvmExampleiOS.Views.Cells
 		{
 			// Note: this .ctor should not contain any initialization logic.
 
-			//BackgroundView.Layer.CornerRadius = 8;
-			//ContentView.Layer.CornerRadius = 8;
-   //         ContentView.BackgroundColor = UIColor.Blue;
-
             this.DelayBind(() =>
             {
+				StackBackground.Layer.CornerRadius = 8;
 				var set = this.CreateBindingSet<WeatherTableViewCell, ListResult>();
 				set.Bind(cityNameLabel).To(m => m.Name);
 				set.Bind(CountryLabel).To(m => m.Sys.Country);

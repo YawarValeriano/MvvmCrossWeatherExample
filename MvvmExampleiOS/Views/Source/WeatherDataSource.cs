@@ -12,7 +12,7 @@ namespace MvvmExampleiOS.Views.Source
 		{
             // Register cell for reuse
             tableView.RegisterNibForCellReuse(WeatherTableViewCell.Nib, WeatherTableViewCell.Key);
-
+            DeselectAutomatically = true;
         }
 
         protected override UITableViewCell GetOrCreateCellFor(UITableView tableView, NSIndexPath indexPath, object item)

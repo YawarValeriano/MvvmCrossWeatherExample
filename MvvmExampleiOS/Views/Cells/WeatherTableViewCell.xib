@@ -139,10 +139,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="BackgroundView" destination="obs-bF-8Kg" id="WMd-IE-3sl"/>
                 <outlet property="CountryLabel" destination="y6l-Hp-B07" id="s04-OZ-XeW"/>
                 <outlet property="MaxTempLabel" destination="gyx-yK-VNi" id="vxO-LP-9Lz"/>
                 <outlet property="MinTempLabel" destination="ZSN-Ba-cUC" id="CfK-qP-zM1"/>
+                <outlet property="StackBackground" destination="obs-bF-8Kg" id="Phs-hM-O0u"/>
                 <outlet property="TemperatureLabel" destination="5Kg-bD-2ds" id="jIp-Sk-zTN"/>
                 <outlet property="WeatherLabel" destination="jIn-HQ-MXK" id="F8o-j7-dGp"/>
                 <outlet property="cityNameLabel" destination="WIv-TW-lNa" id="eA0-EM-q7f"/>
