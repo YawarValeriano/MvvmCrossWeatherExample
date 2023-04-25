@@ -122,6 +122,12 @@
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
             <Visible>false</Visible>
         </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Colors\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Colors\Primary.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Colors\Secondary.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Colors\Accent.colorset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\Colors\SecondaryDark.colorset\Contents.json" />
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />

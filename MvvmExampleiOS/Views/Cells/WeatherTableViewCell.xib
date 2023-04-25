@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -122,7 +123,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.47027082892994565" green="0.93544093277460738" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="Secondary"/>
                         <constraints>
                             <constraint firstItem="vRd-Qo-p5O" firstAttribute="top" secondItem="obs-bF-8Kg" secondAttribute="top" constant="5" id="G9Q-bu-qPU"/>
                             <constraint firstAttribute="bottom" secondItem="vRd-Qo-p5O" secondAttribute="bottom" constant="5" id="OLS-av-P5c"/>
@@ -150,4 +151,9 @@
             <point key="canvasLocation" x="-240" y="-120"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Secondary">
+            <color red="1" green="0.74117647058823533" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

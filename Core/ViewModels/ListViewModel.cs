@@ -55,7 +55,8 @@ namespace Core.ViewModels
             set {
                 _searchTerm = value;
                 RaisePropertyChanged(() => SearchTerm);
-                EnabledSearchButton = _searchTerm.Length > 2;
+                _enabledSearchButton = _searchTerm.Length > 2;
+                RaisePropertyChanged(() => EnabledSearchButton);
             }
         }
 
