@@ -31,7 +31,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		local:layout_behavior="@string/appbar_scrolling_view_behavior"
-		local:MvxBind="IsRefreshing LoadWeatherResultTask">
+		local:MvxBind="Refreshing LoadWeatherResultTask.IsNotCompleted; RefreshCommand FetchResultsCommand">
 
         <mvvmcross.droid.support.v7.recyclerview.MvxRecyclerView
             android:id="@+id/my_recycler_view"

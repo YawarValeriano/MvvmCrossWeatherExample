@@ -8,6 +8,7 @@ namespace Core.Repositories
 	public interface IWeatherRepository
 	{
 		Task<WeatherResponse> FindWeatherResultsByName(string locationName);
+		Task<ListResult> FindWeatherById(int id);
 	}
 
 	public class WeatherRepository : IWeatherRepository
@@ -23,12 +24,25 @@ namespace Core.Repositories
         {
 			try
 			{
-                var result = _service.Get<WeatherResponse>(locationName);
+                var result = _service.Get<WeatherResponse>(locationName, GetTypeQuery.ByQuery);
 				return result;
             } catch (Exception e)
 			{
 				throw e;
 			}
+        }
+
+        public Task<ListResult> FindWeatherById(int id)
+        {
+            try
+            {
+                var result = _service.Get<ListResult>(id.ToString(), GetTypeQuery.ById);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

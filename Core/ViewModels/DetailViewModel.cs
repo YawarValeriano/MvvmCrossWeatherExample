@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Globalization;
+using Core.Messages;
 using Core.Models;
 using MvvmCross.Converters;
+using MvvmCross.Plugin.Messenger;
 using MvvmCross.ViewModels;
 
 namespace Core.ViewModels
 {
-	public class DetailViewModel : MvxViewModel<ListResult>
+	public class DetailViewModel : MvxViewModel
 	{
         private string _imageUrl;
         public string ImageUrl
@@ -30,21 +32,39 @@ namespace Core.ViewModels
             }
         }
 
-
-		public DetailViewModel()
-		{
-		}
-
-        public override void Prepare(ListResult parameter)
+        private bool _isLoading;
+        public bool IsLoading
         {
-            _selectedWeatherResult = parameter;
-            _imageUrl = ConvertToURL(parameter.Weather[0].Icon);
+            get => _isLoading;
+            set
+            {
+                _isLoading = value;
+                RaisePropertyChanged(() => IsLoading);
+            }
+        }
 
+
+        private MvxSubscriptionToken _token;
+
+		public DetailViewModel(IMvxMessenger messenger)
+		{
+            _token = messenger.Subscribe<SearchMessage>(OnSearchMessage);
+            IsLoading = true;
+            RaisePropertyChanged(() => IsLoading);
+        }
+
+        private void OnSearchMessage(SearchMessage obj)
+        {
+            SelectedWeatherResult = obj.Result;
+
+            ImageUrl = ConvertToURL(SelectedWeatherResult.Weather[0].Icon);
+
+            IsLoading = false;
         }
 
         private string ConvertToURL(string value)
         {
-            return $"https://openweathermap.org/img/wn/{value}@4x.png";
+            return $"http://openweathermap.org/img/wn/{value}@4x.png";
         }
     }
 }

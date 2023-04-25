@@ -26,8 +26,6 @@ namespace MvvmExampleiOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            //var source = new MvxSimpleTableViewSource(dataTableView, "MyTableViewCell", MyTableViewCell.Key);
-            //dataTableView.RowHeight = 130;
 
             _refreshControl = new MvxUIRefreshControl();
             dataTableView.AddSubview(_refreshControl);
@@ -38,6 +36,7 @@ namespace MvvmExampleiOS.Views
             var set = this.CreateBindingSet<ListExampleViewController, ListViewModel>();
 
             set.Bind(_refreshControl).For(r => r.IsRefreshing).To(vm => vm.LoadWeatherResultTask.IsNotCompleted).WithFallback(false);
+            set.Bind(_refreshControl).For(r => r.RefreshCommand).To(vm => vm.FetchResultsCommand).WithFallback(false);
 
             set.Bind(SearchField).To(vm => vm.SearchTerm);
             set.Bind(SearchButton).To(vm => vm.FetchResultsCommand);
@@ -47,7 +46,6 @@ namespace MvvmExampleiOS.Views
             set.Bind(_dataSource).For(v => v.SelectionChangedCommand).To(vm => vm.ResultSelectedCommand);
 
             set.Apply();
-
         }
     }
 }

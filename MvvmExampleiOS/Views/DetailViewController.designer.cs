@@ -22,6 +22,9 @@ namespace MvvmExampleiOS.Views
 		UIKit.UILabel currentTempLabel { get; set; }
 
 		[Outlet]
+		UIKit.UIProgressView IsLoadingView { get; set; }
+
+		[Outlet]
 		UIKit.UILabel maxTempLabel { get; set; }
 
 		[Outlet]
@@ -29,6 +32,9 @@ namespace MvvmExampleiOS.Views
 
 		[Outlet]
 		FFImageLoading.Cross.MvxCachedImageView mvxImageView { get; set; }
+
+		[Outlet]
+		UIKit.UIStackView StackInfoView { get; set; }
 
 		[Outlet]
 		UIKit.UILabel weatherLabel { get; set; }
@@ -50,6 +56,11 @@ namespace MvvmExampleiOS.Views
 				currentTempLabel = null;
 			}
 
+			if (IsLoadingView != null) {
+				IsLoadingView.Dispose ();
+				IsLoadingView = null;
+			}
+
 			if (maxTempLabel != null) {
 				maxTempLabel.Dispose ();
 				maxTempLabel = null;
@@ -60,14 +71,19 @@ namespace MvvmExampleiOS.Views
 				minTempLabel = null;
 			}
 
+			if (mvxImageView != null) {
+				mvxImageView.Dispose ();
+				mvxImageView = null;
+			}
+
 			if (weatherLabel != null) {
 				weatherLabel.Dispose ();
 				weatherLabel = null;
 			}
 
-			if (mvxImageView != null) {
-				mvxImageView.Dispose ();
-				mvxImageView = null;
+			if (StackInfoView != null) {
+				StackInfoView.Dispose ();
+				StackInfoView = null;
 			}
 		}
 	}

@@ -13,6 +13,7 @@
     <None Remove="Models\" />
     <None Remove="Repositories\" />
     <None Remove="Converters\" />
+    <None Remove="Messages\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DI\" />
@@ -21,10 +22,12 @@
     <Folder Include="Models\" />
     <Folder Include="Repositories\" />
     <Folder Include="Converters\" />
+    <Folder Include="Messages\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross" Version="7.1.2" />
     <PackageReference Include="System.Net.Http.Json" Version="7.0.1" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="7.1.2" />
   </ItemGroup>
 </Project>

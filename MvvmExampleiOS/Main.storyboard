@@ -200,7 +200,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6gZ-HF-Rnh">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6gZ-HF-Rnh">
                                 <rect key="frame" x="31" y="308" width="331" height="101.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3PC-cK-ErV">
@@ -302,12 +302,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jEp-G2-R3n">
+                                <rect key="frame" x="66" y="424" width="261" height="4"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="jEp-G2-R3n" secondAttribute="trailing" constant="50" id="3c0-fu-c22"/>
                             <constraint firstItem="6gZ-HF-Rnh" firstAttribute="leading" secondItem="CdW-bE-mY5" secondAttribute="leadingMargin" constant="15" id="D3f-rk-O48"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6gZ-HF-Rnh" secondAttribute="trailing" constant="15" id="FXY-fQ-pHe"/>
+                            <constraint firstItem="jEp-G2-R3n" firstAttribute="centerY" secondItem="CdW-bE-mY5" secondAttribute="centerY" id="SnF-iN-DWr"/>
                             <constraint firstItem="0Ep-Hc-b0X" firstAttribute="top" secondItem="5EZ-jr-JxB" secondAttribute="bottom" constant="25" id="VZe-Ow-KVW"/>
+                            <constraint firstItem="jEp-G2-R3n" firstAttribute="leading" secondItem="CdW-bE-mY5" secondAttribute="leadingMargin" constant="50" id="dnn-Sr-gen"/>
                             <constraint firstItem="6gZ-HF-Rnh" firstAttribute="top" secondItem="0Ep-Hc-b0X" secondAttribute="bottom" constant="40" id="hBM-4K-6eJ"/>
                             <constraint firstItem="0Ep-Hc-b0X" firstAttribute="leading" secondItem="CdW-bE-mY5" secondAttribute="leadingMargin" constant="25" id="ik0-Os-WrM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0Ep-Hc-b0X" secondAttribute="trailing" constant="25" id="kHq-Nh-xfs"/>
@@ -315,6 +321,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detail View" id="Mha-rl-npK"/>
                     <connections>
+                        <outlet property="IsLoadingView" destination="jEp-G2-R3n" id="WGn-9f-xux"/>
+                        <outlet property="StackInfoView" destination="6gZ-HF-Rnh" id="D6e-OC-hw7"/>
                         <outlet property="cityNameLabel" destination="1QG-rD-AAy" id="OY9-dp-84f"/>
                         <outlet property="countryLabel" destination="z3t-4u-acX" id="eog-sO-8C9"/>
                         <outlet property="currentTempLabel" destination="5fg-Qc-Gn5" id="sqU-Ma-WWy"/>

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.Messages;
 using Core.Models;
 using Core.Repositories;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using MvvmCross.Plugin.Messenger;
 using MvvmCross.ViewModels;
 
 namespace Core.ViewModels
@@ -13,11 +15,13 @@ namespace Core.ViewModels
 	{
 		private readonly IWeatherRepository _repository;
         private readonly IMvxNavigationService _navigationService;
+        private readonly IMvxMessenger _messenger;
 
-		public ListViewModel(IWeatherRepository repository, IMvxNavigationService navigationService)
+        public ListViewModel(IWeatherRepository repository, IMvxNavigationService navigationService, IMvxMessenger messenger)
 		{
             _repository = repository;
             _navigationService = navigationService;
+            _messenger = messenger;
 
             WeatherResults = new MvxObservableCollection<ListResult>();
 
@@ -29,17 +33,14 @@ namespace Core.ViewModels
             });
 
             ResultSelectedCommand = new MvxAsyncCommand<ListResult>(ShowWeatherResultAsync);
-        }
 
+        }
 
         // Properties
         private MvxObservableCollection<ListResult> _weatherResults;
         public MvxObservableCollection<ListResult> WeatherResults
         {
-            get
-            {
-                return _weatherResults;
-            }
+            get => _weatherResults;
             set
             {
                 _weatherResults = value;
@@ -50,12 +51,11 @@ namespace Core.ViewModels
         private string _searchTerm;
         public string SearchTerm
         {
-            get { return _searchTerm; }
+            get => _searchTerm;
             set {
                 _searchTerm = value;
                 RaisePropertyChanged(() => SearchTerm);
-                _enabledSearchButton = _searchTerm.Length > 2;
-                RaisePropertyChanged(() => EnabledSearchButton);
+                EnabledSearchButton = _searchTerm.Length > 2;
             }
         }
 
@@ -81,14 +81,16 @@ namespace Core.ViewModels
         // Methods
         private async Task FetchLocationWeather()
         {
-            var result = await _repository.FindWeatherResultsByName(_searchTerm);
+            var result = await _repository.FindWeatherResultsByName(SearchTerm);
             WeatherResults.AddRange(result.ListResults);
         }
 
-        private async Task ShowWeatherResultAsync(ListResult selectedresult)
+        private async Task ShowWeatherResultAsync(ListResult selectedResult)
         {
-            //Console.WriteLine("Send to nextView");
-            await _navigationService.Navigate<DetailViewModel, ListResult>(selectedresult);
+            await _navigationService.Navigate<DetailViewModel>();
+            var result = await _repository.FindWeatherById(selectedResult.Id);
+            var message = new SearchMessage(this, result);
+            _messenger.Publish(message);
         }
     }
 }

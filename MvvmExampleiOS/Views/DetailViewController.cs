@@ -14,15 +14,12 @@ namespace MvvmExampleiOS.Views
     [MvxFromStoryboard("Main")]
     public partial class DetailViewController : MvxViewController<DetailViewModel>
 	{
-        //private MvxCachedImageView _imageControl;
-
         public DetailViewController (IntPtr handle) : base (handle)
 		{
 		}
 
         public override void ViewDidLoad()
         {
-            //var imageViewLoader = new MvxCachedImageView.ImageSourceBindi;
             base.ViewDidLoad();
             var set = CreateBindingSet();
             set.Bind(cityNameLabel).To(m => m.SelectedWeatherResult.Name);
@@ -32,8 +29,9 @@ namespace MvvmExampleiOS.Views
             set.Bind(minTempLabel).To(m => m.SelectedWeatherResult.Main.TempMin);
             set.Bind(maxTempLabel).To(m => m.SelectedWeatherResult.Main.TempMax);
             set.Bind(mvxImageView).For(v => v.ImagePath).To(m => m.ImageUrl);
-            
-            //set.Bind(imageViewLoader).To(m => m.SelectedWeatherResult.Weather[0].Icon).WithConversion("StringUrl");
+            set.Bind(IsLoadingView).For(v => v.Hidden).To(m => m.IsLoading).WithConversion("BooleanNegative");
+            set.Bind(StackInfoView).For(v => v.Hidden).To(m => m.IsLoading);
+
             set.Apply();
         }
 
