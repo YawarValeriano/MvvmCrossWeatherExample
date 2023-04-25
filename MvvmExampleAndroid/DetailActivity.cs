@@ -15,14 +15,30 @@ using MvvmCross.Platforms.Android.Views;
 
 namespace MvvmExampleAndroid
 {
-	[Activity (Label = "DetailActivity")]			
+	[Activity (Label = "@string/navigation_title")]			
 	public class DetailActivity : MvxActivity<DetailViewModel>
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_detail);
+
+            SupportActionBar.SetHomeButtonEnabled(true);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
         }
-	}
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+    }
 }
 

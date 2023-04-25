@@ -5,37 +5,41 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     android:orientation="vertical">
 
    <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="SubTotal" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sub_total" />
     <EditText
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          local:MvxBind="Text SubTotal" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        local:MvxBind="Text SubTotal" />
     <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Generosity" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/generosity" />
     <SeekBar
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:max="100"
-          local:MvxBind="Progress Generosity" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        local:MvxBind="Progress Generosity" />
     <View
-          android:layout_width="match_parent"
-          android:layout_height="1dp"
-          android:background="#ffff00" />
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="15dp"
+        android:background="@color/secondaryColor" />
+
     <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Tip to leave" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tip_to_leave" />
     <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          local:MvxBind="Text Tip" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text Tip" />
 
     <Button
         android:id="@+id/NextButton"
@@ -43,6 +47,6 @@
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="20dp"
-        android:text="List Example"/>
+        android:text="@string/list_example"/>
 
 </LinearLayout>

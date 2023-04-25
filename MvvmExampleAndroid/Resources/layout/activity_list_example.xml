@@ -15,14 +15,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="text"
-            android:hint="Insert Location to search"
+            android:hint="@string/search_hint"
             android:layout_marginEnd="5dp"
             local:MvxBind="Text SearchTerm" />
 
         <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Search"
+            android:text="@string/search"
             local:MvxBind="Click FetchResultsCommand"/>
     </LinearLayout>
 
